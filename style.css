@@ -1,0 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.tab.current-tab {
+    background-color: rgb(240, 237, 237);
+    border-radius: 20px;
+}
+
+.form-container.active {}
