@@ -14,6 +14,7 @@ let currentTab = userTab;
 const API_KEY = "8ae6cd7be72eae7e4a53f34855226417";
 
 currentTab.classList.add("current-tab");
+getFromSessionStorage();
 
 userTab.addEventListener("click", () => {
     switchTab(userTab);
@@ -104,10 +105,10 @@ function renderUserInfo(weatherInfo) {
     flagIcon.src = `https://flagcdn.com/144x108/${weatherInfo?.sys?.country.toLowerCase()}.png`;
     weatherDesc.innerText = weatherInfo?.weather[0]?.description;
     weatherIcon.src = `https://openweathermap.org/img/w/${weatherInfo?.weather[0]?.icon}.png`;
-    tempreture.innerText = weatherInfo?.main?.temp;
-    windspeed.innerText = weatherInfo?.wind?.speed;
-    humidity.innerText = weatherInfo?.main?.humidity;
-    clouds.innerText = weatherInfo?.clouds?.all;
+    tempreture.innerText = (parseFloat(weatherInfo?.main?.temp) - 273.5).toFixed(2).toString() + "  \u00B0" + "C";
+    windspeed.innerText = weatherInfo?.wind?.speed + " m/s";
+    humidity.innerText = weatherInfo?.main?.humidity + "%";
+    clouds.innerText = weatherInfo?.clouds?.all + "%";
 }
 
 

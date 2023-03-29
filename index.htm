@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/512a3393a0.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;1,400&display=swap"
         rel="stylesheet">
 </head>
 
@@ -26,11 +26,11 @@
         </div>
 
         <!-- Weather Details -->
-        <div class="weather-container">
-            <div class="grant-location-container">
+        <div class="weather-container ">
+            <div class="grant-location-container sub-container">
                 <!-- grant location -->
                 <img src="./assests/location.jpg" width="80" height="105" loading="lazy">
-                <h2>Grant Location Access</h2>
+                <p>Grant Location Access</>
                 <p>Allow access to get weather information</p>
                 <button class="btn" data-grantaccess>Grant Access</button>
             </div>
@@ -47,21 +47,23 @@
 
             <!-- Loading screen -->
             <div class="loading">
-                <img src="./assests/Plant.gif" alt="" width="150" height="150" loading="lazy">
+                <div class="img-container">
+                    <img src="./assests/Plant.gif" alt="" width="120" height="120" loading="lazy">
+                </div>
                 <p>Loading</p>
             </div>
 
             <!-- Show Weather Info -->
-            <div class="weather-card">
+            <div class="weather-card sub-container">
 
-                <div clas="name">
+                <div class="name">
                     <p data-cityname></p>
                     <img data-countryflag>
                 </div>
 
-                <p data-weatherDesc></p>
-                <img data-weathericon>
-                <p data-tempreture></p>
+                <p class="weather-desc" data-weatherDesc></p>
+                <img class="weather-icon" data-weathericon>
+                <p class="weather-temp" data-tempreture></p>
 
                 <div class="weather-details">
 
@@ -71,14 +73,14 @@
                         <p class="details-text" data-windspeed></p>
                     </div>
 
-                    <div class="details-card">
-                        <img class="details-img" src="./assests/pngegg.png" width="40" height="40">
+                    <div class="details-card" id="humidity">
+                        <img class="details-img" src="./assests/pngegg.png" width="33" height="35">
                         <p class="details-text">HUMIDITY</p>
                         <p class="details-text" data-humidity></p>
                     </div>
 
-                    <div class="details-card">
-                        <img class="details-img" src="./assests/cloud.png" width="50" height="50">
+                    <div class="details-card" id="cloud">
+                        <img class="details-img" src="./assests/cloud2.png" width="38" height="34">
                         <p class="details-text">CLOUDS</p>
                         <p class="details-text" data-clouds></p>
                     </div>

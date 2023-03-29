@@ -1,11 +1,251 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    color: rgb(227, 231, 235);
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
+
+.tab-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.tab {
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    padding: 5px 8px;
 }
 
 .tab.current-tab {
-    background-color: rgb(240, 237, 237);
-    border-radius: 20px;
+    background: rgba(2, 9, 37, 0.21);
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
 }
 
-.form-container.active {}
+.weather-container {
+    margin-block: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    all: unset;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    font-weight: 500;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.21);
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    margin-bottom: 10px;
+}
+
+.sub-container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.grant-location-container {
+    display: none;
+}
+
+.grant-location-container.active {
+    display: flex;
+}
+
+.grant-location-container img {
+    margin-bottom: 2rem;
+}
+
+.grant-location-container p:first-of-type {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.grant-location-container p:last-of-type {
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+}
+
+
+.loading {
+    display: none;
+}
+
+
+.loading.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading p {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.loading .img-container {
+    max-width: 200px;
+    border-radius: 50%;
+    padding: 20px;
+    overflow: hidden;
+    background: white;
+    text-align: center;
+}
+
+.weather-card {
+    display: none;
+}
+
+.weather-card.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name {
+    display: flex;
+    justify-content: centers;
+    align-items: center;
+}
+
+.name p {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: white;
+}
+
+.name img {
+    margin-left: 8px;
+    width: 2.2rem;
+    height: 1.5rem;
+}
+
+.weather-desc {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.weather-icon {
+    width: 90px;
+    height: 90px;
+}
+
+
+.weather-container p[data-tempreture] {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.weather-details {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.details-card img {
+    margin-bottom: 17px;
+}
+
+.details-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 25px 30px;
+    background: rgba(255, 255, 255, 0.21);
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    padding: 15px 30px;
+}
+
+#cloud {
+    padding: 15px 35px;
+}
+
+#humidity {
+    padding: 15px 32px;
+}
+
+.form-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 8px;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.form-container.active {
+    display: flex;
+}
+
+.form-container input {
+    all: unset;
+    width: 90%;
+    width: 650px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    background: rgba(195, 215, 221, 0.45);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.3px);
+    -webkit-backdrop-filter: blur(9.3px);
+}
+
+.form-container input::placeholder {
+    color: white;
+    opacity: 0.5;
+}
+
+.form-container input:focus {
+    outline: 3px solid white
+}
+
+.form-container .icon {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: rgb(91, 180, 228);
+}
